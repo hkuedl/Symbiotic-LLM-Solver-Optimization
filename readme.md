@@ -46,10 +46,10 @@ The repository contains four benchmark configurations spanning energy supply and
 |---|---|---|---|
 | UC | 118-bus | `118-bus` | `params.uc.params_uc.bus118` |
 | UC | 1354-bus | `1354-bus` | `params.uc.params_uc.bus1354` |
-| IS | cement plant | `cement-plant` | `params.cement_plant` |
-| IS | steel powder plant | `steel-powder-plant` | `params.steel_powder_plant` |
+| IS | cement plant | `cement-plant` | `params.is.params.is.cement_plant` |
+| IS | steel powder plant | `steel-powder-plant` | `params.is.params.is.steel_powder_plant` |
 
-Each operational day contains **96 time steps of 15 minutes**. This project evaluates the benchmarks across **30 operational days**. Day IDs are zero-based: `--days 0` selects the first day, and `--days 0:30` selects days 0 through 29.
+Each operational day contains **96 time steps of 15 minutes**. This project evaluates the benchmarks across **30 operational days**. `--days 0` selects the 1 day, and `--days 0:30` selects the 30 days.
 
 ```text
 dataset/
@@ -60,7 +60,7 @@ dataset/
 │   │   ├── wind_uc.csv
 │   │   ├── solar_uc.csv
 │   │   └── reserve_uc.csv
-│   └── 1354-bus/               # Same input filenames
+│   └── 1354-bus/
 └── is/
     ├── lmp_price_is.csv
     ├── pv_generation_is.csv
@@ -92,11 +92,11 @@ Problem-specific implementations are separated into `uc/` and `is/` directories,
 │   ├── run_uc.py
 │   ├── run_is.py
 │   └── cli.py
-├── common/                    # Shared solver, API, path, and CSV utilities
-├── dataset/                   # Benchmark inputs
-├── figures/                   # PDF figures and PNG previews
-├── record/                    # Generated daily summary CSV files
-├── results/                   # Generated time-step schedule CSV files
+├── common/                    # Solver, API, path, and CSV utilities
+├── dataset/                   # Benchmark input files
+├── figures/                   # Figures files
+├── record/                    # Solution record output CSV files
+├── results/                   # Operating result output CSV files
 ├── requirements.txt
 ├── license
 └── readme.md
@@ -114,8 +114,8 @@ Problem-specific implementations are separated into `uc/` and `is/` directories,
 | `sa` | Simulated annealing | SA |
 | `lns` | Large neighborhood search | LNS |
 | `rh` | Rolling horizon | RH |
-| `llm` | Direct LLM assignment baseline | — |
-| `llm-confidence` | Confidence-based LLM assignment baseline | — |
+| `llm` | Direct LLM assignment baseline | Complete |
+| `llm-confidence` | Confidence-based LLM assignment baseline | Confidence |
 
 `ours/` contains the proposed method, `baselines/` contains the comparison methods, and `solver/` contains the standalone solver wrappers. The mathematical formulations are in `models/`, and benchmark parameters are in `params/`.
 
