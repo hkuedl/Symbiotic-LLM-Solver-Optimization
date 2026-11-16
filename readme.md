@@ -23,7 +23,7 @@ The workflow has four steps:
 
 [![Symbiotic LLM–solver framework: candidate decisions reduce the search space, and solver feedback guides iterative refinement.](figures/framework.png)](figures/framework.pdf)
 
-*The symbiotic optimization framework. Generative decision priors and mathematical solver feedback make search-space reduction selective and revisable.*
+*The symbiotic optimization framework. Generative decision priors and mathematical solver feedback make search space reduction selective and revisable.*
 
 ## Requirements
 
