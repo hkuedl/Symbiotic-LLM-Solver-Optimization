@@ -46,8 +46,8 @@ The repository contains four benchmark configurations spanning energy supply and
 |---|---|---|---|
 | UC | 118-bus | `118-bus` | `params.uc.params_uc.bus118` |
 | UC | 1354-bus | `1354-bus` | `params.uc.params_uc.bus1354` |
-| IS | cement plant | `cement-plant` | `params.is.params.is.cement_plant` |
-| IS | steel powder plant | `steel-powder-plant` | `params.is.params.is.steel_powder_plant` |
+| IS | cement plant | `cement-plant` | `params.is.params_is.cement_plant` |
+| IS | steel powder plant | `steel-powder-plant` | `params.is.params_is.steel_powder_plant` |
 
 Each operational day contains **96 time steps of 15 minutes**. This project evaluates the benchmarks across **30 operational days**. `--days 0` selects the 1 day, and `--days 0:30` selects the 30 days.
 
